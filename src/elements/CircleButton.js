@@ -1,19 +1,21 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Font } from 'expo';
-import fontAwsome from '../../assets/fonts/fa-solid-900.ttf';
 import { createIconSet } from '@expo/vector-icons';
+import fontAwsome from '../../assets/fonts/fa-solid-900.ttf';
 
 const CustomIcon = createIconSet({
   // Unicodeとアイコンの名前の関連付け
   pencil: '\uf303',
   plus: '\uf067',
+  check: '\uf00c',
 }, 'FontAwsome');
 
 class CircleButton extends React.Component {
   state = {
     fontLoaded: false,
   }
+
   async componentWillMount() {
     await Font.loadAsync({
       FontAwsome: fontAwsome,
